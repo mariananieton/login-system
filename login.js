@@ -33,6 +33,10 @@ app.post("/",function(req,res){
     })
 })
 
+// quando o logado com sucesso
+app.get("/welcome",function(req,res){
+    res.sendFile(__dirname + "/welcome.html")
+})
 
 // setando app port
 app.listen(4500);
