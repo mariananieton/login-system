@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     <section class="box">
@@ -17,9 +17,11 @@
         </div>
         <div class="form">
             <h2>Login</h2>
-            <input type="email" class="input-field" placeholder="Usuário" />
-            <input type="password" class="input-field" placeholder="Senha" />
-            <input type="button" class="btn" value="LOGIN">
+            <form action="" method="POST">
+                <input type="email" name="username" class="input-field" placeholder="Usuário" />
+                <input type="password" name="password" class="input-field" placeholder="Senha" />
+                <input type="button" class="btn" value="LOGIN">
+            </form>
         </div>
     </section>
 </body>
