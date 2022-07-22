@@ -22,6 +22,17 @@ app.get("/",function(req,res){
     res.sendFile(__dirname + "/index.html");
 })
 
+app.post("/",function(req,res){
+    connection.query("select * from loginuser where user_name = ? and user_pass = ?", function(error,results,fields){
+        if (results.length > 0){
+            res.redirect("/welcome");
+        } else {
+            res.redirect("/");
+        }
+        res.end();
+    })
+})
+
 
 // setando app port
 app.listen(4500);
