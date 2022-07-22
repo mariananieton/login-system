@@ -9,7 +9,7 @@
     border: none;
 }
 
-body {
+body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@ body {
     background: linear-gradient(-45deg,#7f379b,#ffa26c);
 }
 
-.box {
+.box{
     width: 900px;
     height: 400px;
     display: flex;
@@ -29,7 +29,7 @@ body {
     overflow: hidden;
 }
 
-.design {
+.design{
     width: 50%;
     height: 100%;
     position: relative;
@@ -80,7 +80,7 @@ body {
     left: 100px;
 }
 
-.form {
+.form{
     width: 50%;
     height: 100%;
     display: flex;
@@ -88,4 +88,19 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 0 75px;
+}
+
+.form h2{
+    margin-bottom: 15px;
+}
+
+.input-field{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 1em;
+    color: #000;
+    background-color: #e2c4e0;
 }
