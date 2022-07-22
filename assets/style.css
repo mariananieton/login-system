@@ -120,3 +120,8 @@ body{
     margin-top: 15px;
     border-radius: 5px;
 }
+
+.btn:hover{
+    cursor: pointer;
+    background-color: #ff92a6;
+}

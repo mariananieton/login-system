@@ -20,14 +20,14 @@ connection.connect(function(error){
 })
 
 
-app.get("/",encoder, function(req,res){
-    var username = req.body.username;
-    var password = req.body.password;
-
+app.get("/",function(req,res){
     res.sendFile(__dirname + "/index.html");
 })
 
-app.post("/",function(req,res){
+app.post("/",encoder, function(req,res){
+    var username = req.body.username;
+    var password = req.body.password;
+
     connection.query("select * from loginuser where user_name = ? and user_pass = ?",[username,password],function(error,results,fields){
         if (results.length > 0){
             res.redirect("/welcome");
@@ -44,4 +44,4 @@ app.get("/welcome",function(req,res){
 })
 
 // setando app port
-app.listen(4000);
+app.listen(4500);
