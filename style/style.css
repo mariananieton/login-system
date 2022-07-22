@@ -57,3 +57,35 @@ body {
     left: -163px;
     border: 25px solid #e2c4e0;
 }
+
+.design div:nth-child(3){
+    width: 190px;
+    height: 70px;
+    border-radius: 50px;
+    background: linear-gradient(-90deg,#7f379b,#ff92a6);
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 70px;
+    left: -100px;
+}
+
+.design div:last-child{
+    width: 190px;
+    height: 70px;
+    border-radius: 50px;
+    background: linear-gradient(-90deg,#7f379b,#ffa26c);
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: -50px;
+    left: 100px;
+}
+
+.form {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 75px;
+}
