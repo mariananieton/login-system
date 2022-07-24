@@ -1,10 +1,14 @@
 const mysql = require("mysql");
 const express = require("express");
 const bodyParser = require("body-parser");
-const encoder = bodyParser.urlencoded();
+const encoder = bodyParser.urlencoded({ extended: true });
+const axios = require("axios");
 
 const app = express();
 app.use("/assets",express.static("assets"));
+
+app.use(express.json());
+app.use(bodyParser.json());
 
 app.set('view engine', 'ejs');
 
@@ -48,6 +52,12 @@ app.get("/tasks",function(req,res){
         }
         res.render('tasks', { lista : result });
     });
+});
+
+// consumindo API de Pokémon
+
+axios.get("https://pokeapi.co/api/v2/pokemon").then(function(response){
+    console.log(response.data);
 });
 
 app.listen(4000);
