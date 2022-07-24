@@ -6,6 +6,8 @@ const encoder = bodyParser.urlencoded();
 const app = express();
 app.use("/assets",express.static("assets"));
 
+app.set('view engine', 'ejs');
+
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -30,7 +32,7 @@ app.post("/",encoder, function(req,res){
 
     connection.query("select * from loginuser where user_name = ? and user_pass = ?",[username,password],function(error,results,fields){
         if (results.length > 0){
-            res.redirect("/welcome");
+            res.redirect("/tasks");
         } else {
             res.redirect("/");
         }
@@ -39,9 +41,13 @@ app.post("/",encoder, function(req,res){
 })
 
 // quando o logado com sucesso
-app.get("/welcome",function(req,res){
-    res.sendFile(__dirname + "/welcome.html")
-})
+app.get("/tasks",function(req,res){
+    connection.query("SELECT loginuser.user_name, tasks.task_name FROM nodejs.loginuser loginuser JOIN nodejs.tasks tasks ON loginuser.user_id = tasks.fk_user_id;",[],function(error,result){
+        if(error){
+            res.status(200).send(error);
+        }
+        res.render('tasks', { lista : result });
+    });
+});
 
-// setando app port
-app.listen(4500);
+app.listen(4000);
